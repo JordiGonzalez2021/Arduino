@@ -16,8 +16,7 @@ int h = 0;
 void setup()
 {
   Serial.begin(9600);
-  Serial.println("Lets calculate a hypoteneus");
-  
+  Serial.println("Lets calculate a hypoteneuse");
   
   Serial.print("a = ");
   Serial.println(a);
