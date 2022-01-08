@@ -10,14 +10,14 @@
 
 //************************* VARIABLES ***************************
 
-const byte segA = 8;
-const byte segB = 7;
-const byte segC = 5;
-const byte segD = 3;
-const byte segE = 2;
-const byte segF = 10;
-const byte segG = 11;
-const byte segDP = 6;
+const int segA = 8;
+const int segB = 7;
+const int segC = 5;
+const int segD = 3;
+const int segE = 2;
+const int segF = 10;
+const int segG = 11;
+const int segDP = 6;
 
 //*************************** SETUP *****************************
 
