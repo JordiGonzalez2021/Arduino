@@ -19,12 +19,32 @@ const byte led6 = 11;         // donar nom al pin 11 de l’Arduino
 const byte led7 = 12;         // donar nom al pin 12 de l’Arduino
 const byte pot0 = A0;         // donar nom al pin A0 de l’Arduino
 
+unsigned long velocitat = 20; // velocitat de l'acció en ms
 int valPot0;                  // guardar valor del potenciometre
 
 //*************************** SETUP *****************************
 
 void setup() 
 {
+  pinMode(led0, OUTPUT);     // definir el pin 5 com una sortida
+  pinMode(led1, OUTPUT);     // definir el pin 6 com una sortida
+  pinMode(led2, OUTPUT);     // definir el pin 7 com una sortida
+  pinMode(led3, OUTPUT);     // definir el pin 8 com una sortida
+  pinMode(led4, OUTPUT);     // definir el pin 9 com una sortida
+  pinMode(led5, OUTPUT);     // definir el pin 10 com una sortida
+  pinMode(led6, OUTPUT);     // definir el pin 11 com una sortida
+  pinMode(led7, OUTPUT);     // definir el pin 12 com una sortida
+  pinMode(pot0, INPUT);      // definir el pin A0 com una entrada
+  Serial.begin(9600);        // establir el temps de comunicació entre l'ordinador i l'arduino
+}
+
+//*************************** LOOP ******************************
+void loop() 
+{
+  valPot0 = analogRead(pot0);
+  Serial.println(valPot0);
+  velocitat = 10 + valPot0;    // actualitzar velocitat amb el valor del potenciòmetre
+  
   digitalWrite(led0, HIGH);    // posar a 5V el pin 5
   digitalWrite(led1, LOW);     // posar a 0V el pin 6
   digitalWrite(led2, LOW);     // posar a 0V el pin 7
@@ -34,7 +54,7 @@ void setup()
   digitalWrite(led6, LOW);     // posar a 0V el pin 11
   digitalWrite(led7, HIGH);    // posar a 5V el pin 12
   
-  delay(temps);                // es queden leds 300ms encesos
+  delay(velocitat);            // es queden leds 300ms encesos
                                //2
   digitalWrite(led0, HIGH);    // posar a 5V el pin 5
   digitalWrite(led1, HIGH);    // posar a 5V el pin 6
@@ -45,7 +65,7 @@ void setup()
   digitalWrite(led6, HIGH);    // posar a 5V el pin 11
   digitalWrite(led7, HIGH);    // posar a 5V el pin 12
   
-  delay(temps);                // es queden leds 300ms apagats
+  delay(velocitat);            // es queden leds 300ms apagats
                                //3
   digitalWrite(led0, LOW);     // posar a 0V el pin 5
   digitalWrite(led1, HIGH);    // posar a 5V el pin 6
@@ -56,7 +76,7 @@ void setup()
   digitalWrite(led6, HIGH);    // posar a 5V el pin 11
   digitalWrite(led7, LOW);     // posar a 0V el pin 12
 
-  delay(temps);                // es queden leds 300ms apagats
+  delay(velocitat);            // es queden leds 300ms apagats
                                //4
   digitalWrite(led0, LOW);     // posar a 0V el pin 5
   digitalWrite(led1, LOW);     // posar a 0V el pin 6
@@ -67,7 +87,7 @@ void setup()
   digitalWrite(led6, LOW);     // posar a 0V el pin 11
   digitalWrite(led7, LOW);     // posar a 0V el pin 12
   
-  delay(temps);                // es queden leds 300ms apagats
+  delay(velocitat);            // es queden leds 300ms apagats
                                //5
   digitalWrite(led0, LOW);     // posar a 0V el pin 5
   digitalWrite(led1, LOW);     // posar a 0V el pin 6
@@ -78,7 +98,7 @@ void setup()
   digitalWrite(led6, LOW);     // posar a 0V el pin 11
   digitalWrite(led7, LOW);     // posar a 0V el pin 12
   
-  delay(temps);                // es queden leds 300ms apagats
+  delay(velocitat);            // es queden leds 300ms apagats
                                //6
   digitalWrite(led0, LOW);     // posar a 0V el pin 5
   digitalWrite(led1, LOW);     // posar a 0V el pin 6
@@ -89,7 +109,7 @@ void setup()
   digitalWrite(led6, LOW);     // posar a 0V el pin 11
   digitalWrite(led7, LOW);     // posar a 0V el pin 12
     
-  delay(temps);                // es queden leds 300ms apagats
+  delay(velocitat);            // es queden leds 300ms apagats
                                //7
   digitalWrite(led0, LOW);     // posar a 0V el pin 5
   digitalWrite(led1, LOW);     // posar a 0V el pin 6
@@ -100,7 +120,7 @@ void setup()
   digitalWrite(led6, LOW);     // posar a 0V el pin 11
   digitalWrite(led7, LOW);     // posar a 0V el pin 12
   
-  delay(temps);                // es queden leds 300ms apagats
+  delay(velocitat);            // es queden leds 300ms apagats
                                //8
   digitalWrite(led0, LOW);     // posar a 0V el pin 5
   digitalWrite(led1, HIGH);    // posar a 5V el pin 6
@@ -111,7 +131,7 @@ void setup()
   digitalWrite(led6, HIGH);    // posar a 5V el pin 11
   digitalWrite(led7, LOW);     // posar a 0V el pin 12
 
-  delay(temps);                // es queden leds 300ms apagats
+  delay(velocitat);            // es queden leds 300ms apagats
                                //9
   digitalWrite(led0, HIGH);    // posar a 5V el pin 5
   digitalWrite(led1, HIGH);    // posar a 5V el pin 6
@@ -122,7 +142,7 @@ void setup()
   digitalWrite(led6, HIGH);    // posar a 5V el pin 11
   digitalWrite(led7, HIGH);    // posar a 5V el pin 12
 
-  delay(temps);                // es queden leds 300ms apagats
+  delay(velocitat);            // es queden leds 300ms apagats
                                //10
   digitalWrite(led0, HIGH);    // posar a 5V el pin 5
   digitalWrite(led1, LOW);     // posar a 0V el pin 6
@@ -133,7 +153,7 @@ void setup()
   digitalWrite(led6, LOW);     // posar a 0V el pin 11
   digitalWrite(led7, HIGH);    // posar a 5V el pin 12
 
-  delay(temps);                // es queden leds 300ms apagats
+  delay(velocitat);            // es queden leds 300ms apagats
                                //11
   digitalWrite(led0, LOW);     // posar a 0V el pin 5
   digitalWrite(led1, LOW);     // posar a 0V el pin 6
@@ -144,7 +164,7 @@ void setup()
   digitalWrite(led6, LOW);     // posar a 0V el pin 11
   digitalWrite(led7, LOW);     // posar a 0V el pin 12
 
-  delay(temps);                // es queden leds 300ms apagats
+  delay(velocitat);            // es queden leds 300ms apagats
                                //12
   digitalWrite(led0, LOW);     // posar a 0V el pin 5
   digitalWrite(led1, LOW);     // posar a 0V el pin 6
@@ -155,13 +175,7 @@ void setup()
   digitalWrite(led6, LOW);     // posar a 0V el pin 11
   digitalWrite(led7, LOW);     // posar a 0V el pin 12
  
-  delay(temps);                // es queden leds 300ms apagats
-}
-
-//*************************** LOOP ******************************
-void loop() 
-{
-  
+  delay(velocitat);            // es queden leds 300ms apagats
 }
 
 //************************* FUNCIONS ****************************
