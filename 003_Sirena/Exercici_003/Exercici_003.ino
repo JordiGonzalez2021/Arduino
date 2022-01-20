@@ -15,7 +15,7 @@ const byte xiulet = 9;
 
 void setup() 
 {
-  
+  pinMode(xiulet, OUTPUT);
 }
 
 //*************************** LOOP ******************************
